@@ -25,16 +25,16 @@ class SendEventReminders extends Command
         $sent24h = $this->dispatch(
             window: '24-hour',
             column: 'reminder_24h_sent_at',
-            fromTs: $now->timestamp,
-            toTs: $now->copy()->addDay()->timestamp,
+            fromTs: (int) $now->timestamp,
+            toTs: (int) $now->copy()->addDay()->timestamp,
         );
 
         $sent3d = $this->dispatch(
             window: '3-day',
             column: 'reminder_3d_sent_at',
             // Strictly more than 24h out so the two windows never overlap.
-            fromTs: $now->copy()->addDay()->timestamp,
-            toTs: $now->copy()->addDays(3)->timestamp,
+            fromTs: (int) $now->copy()->addDay()->timestamp,
+            toTs: (int) $now->copy()->addDays(3)->timestamp,
         );
 
         $this->info("Queued {$sent24h} 24-hour and {$sent3d} 3-day reminders.");
@@ -59,12 +59,14 @@ class SendEventReminders extends Command
             })
             ->chunkById(200, function ($attendees) use ($window, $column, &$count) {
                 foreach ($attendees as $attendee) {
-                    if ($attendee->event === null) {
+                    $event = $attendee->event;
+
+                    if ($event === null) {
                         continue;
                     }
 
                     Mail::to($attendee->email)->queue(
-                        new EventReminderMail($attendee, $attendee->event, $window)
+                        new EventReminderMail($attendee, $event, $window)
                     );
 
                     $attendee->forceFill([$column => now()])->save();

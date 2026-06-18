@@ -33,7 +33,7 @@ final class EventImages
         // A stable integer derived from the id drives variant selection.
         $hash = (int) hexdec(substr(md5($id), 0, 8));
 
-        $first = self::VARIANTS === 0 ? 0 : ($hash % self::VARIANTS) + 1;
+        $first = ($hash % self::VARIANTS) + 1;
         $second = (($hash >> 3) % self::VARIANTS) + 1;
         if ($second === $first) {
             $second = ($second % self::VARIANTS) + 1;

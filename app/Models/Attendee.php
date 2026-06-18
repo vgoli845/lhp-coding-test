@@ -16,6 +16,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $reminder_24h_sent_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property-read Event|null $event
  */
 class Attendee extends Model
 {
@@ -29,6 +30,9 @@ class Attendee extends Model
         'reminder_24h_sent_at' => 'datetime',
     ];
 
+    /**
+     * @return BelongsTo<Event, $this>
+     */
     public function event(): BelongsTo
     {
         return $this->belongsTo(Event::class);

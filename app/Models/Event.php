@@ -27,6 +27,7 @@ use Illuminate\Support\Str;
  */
 class Event extends Model
 {
+    /** @use HasFactory<\Database\Factories\EventFactory> */
     use HasFactory, HasUuids;
 
     protected $guarded = [];
@@ -43,11 +44,17 @@ class Event extends Model
         return (string) Str::uuid();
     }
 
+    /**
+     * @return BelongsTo<User, $this>
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return HasMany<Attendee, $this>
+     */
     public function attendees(): HasMany
     {
         return $this->hasMany(Attendee::class);

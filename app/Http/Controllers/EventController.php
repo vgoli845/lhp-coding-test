@@ -56,7 +56,10 @@ class EventController extends Controller
             ->simplePaginate(24)
             ->withQueryString();
 
-        $cards = array_map(fn (Event $event) => $event->toCardArray(), $events->items());
+        /** @var list<Event> $items */
+        $items = $events->items();
+
+        $cards = array_map(fn (Event $event) => $event->toCardArray(), $items);
 
         return response()->json([
             'data' => $cards,
@@ -103,6 +106,8 @@ class EventController extends Controller
 
     /**
      * Build the filtered event query shared by the browse endpoint.
+     *
+     * @return Builder<Event>
      */
     private function browseQuery(Request $request): Builder
     {
