@@ -53,7 +53,7 @@ it('filters the data endpoint by status', function () {
         ->assertJsonPath('data.0.status', 'cancelled');
 });
 
-it('shows an event detail page with its payload', function () {
+it('shows an event detail page with presented attributes', function () {
     $user = User::factory()->create();
     $event = Event::factory()->for($user)->create([
         'payload' => ['name' => 'Global Tech Summit', 'location' => ['lat' => 1.5, 'lng' => 2.5]],
@@ -64,7 +64,9 @@ it('shows an event detail page with its payload', function () {
         ->assertInertia(fn ($page) => $page
             ->component('Events/Show')
             ->where('event.id', $event->id)
-            ->where('event.payload.name', 'Global Tech Summit')
+            ->where('event.name', 'Global Tech Summit')
+            ->where('event.attendees_count', 0)
+            ->has('event.images', 3)
         );
 });
 

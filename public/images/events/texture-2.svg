@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Event">
+  <defs>
+    <linearGradient id="g-texture-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g-texture-2)"/>
+  <circle cx="0" cy="0" r="6" fill="#ffffff" opacity="0.04"/><circle cx="137" cy="89" r="19" fill="#ffffff" opacity="0.06"/><circle cx="274" cy="178" r="6" fill="#ffffff" opacity="0.08"/><circle cx="411" cy="267" r="19" fill="#ffffff" opacity="0.10"/><circle cx="548" cy="356" r="6" fill="#ffffff" opacity="0.12"/><circle cx="685" cy="445" r="19" fill="#ffffff" opacity="0.04"/><circle cx="22" cy="34" r="6" fill="#ffffff" opacity="0.06"/><circle cx="159" cy="123" r="19" fill="#ffffff" opacity="0.08"/><circle cx="296" cy="212" r="6" fill="#ffffff" opacity="0.10"/><circle cx="433" cy="301" r="19" fill="#ffffff" opacity="0.12"/><circle cx="570" cy="390" r="6" fill="#ffffff" opacity="0.04"/><circle cx="707" cy="479" r="19" fill="#ffffff" opacity="0.06"/><circle cx="44" cy="68" r="6" fill="#ffffff" opacity="0.08"/><circle cx="181" cy="157" r="19" fill="#ffffff" opacity="0.10"/><circle cx="318" cy="246" r="6" fill="#ffffff" opacity="0.12"/><circle cx="455" cy="335" r="19" fill="#ffffff" opacity="0.04"/><circle cx="592" cy="424" r="6" fill="#ffffff" opacity="0.06"/><circle cx="729" cy="13" r="19" fill="#ffffff" opacity="0.08"/><circle cx="66" cy="102" r="6" fill="#ffffff" opacity="0.10"/><circle cx="203" cy="191" r="19" fill="#ffffff" opacity="0.12"/><circle cx="340" cy="280" r="6" fill="#ffffff" opacity="0.04"/><circle cx="477" cy="369" r="19" fill="#ffffff" opacity="0.06"/><circle cx="614" cy="458" r="6" fill="#ffffff" opacity="0.08"/><circle cx="751" cy="47" r="19" fill="#ffffff" opacity="0.10"/><circle cx="88" cy="136" r="6" fill="#ffffff" opacity="0.12"/><circle cx="225" cy="225" r="19" fill="#ffffff" opacity="0.04"/><circle cx="362" cy="314" r="6" fill="#ffffff" opacity="0.06"/><circle cx="499" cy="403" r="19" fill="#ffffff" opacity="0.08"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
+        font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+        font-size="46" font-weight="700" fill="#ffffff" opacity="0.92"
+        letter-spacing="2" style="text-transform:uppercase">Event</text>
+</svg>
